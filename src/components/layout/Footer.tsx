@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">CorporateShowcase</h3>
+            <h3 className="text-2xl font-bold">NextCorporate</h3>
             <p className="text-gray-400">
               Leading innovation in the corporate world. We deliver excellence through technology and expertise.
             </p>
@@ -69,7 +69,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3 text-gray-400">
                 <Mail className="h-5 w-5 mt-0.5 flex-shrink-0" />
-                <span>contact@corporateshowcase.com</span>
+                <span>contact@nextcorporate.com</span>
               </li>
               <li className="flex items-start space-x-3 text-gray-400">
                 <Phone className="h-5 w-5 mt-0.5 flex-shrink-0" />
@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} CorporateShowcase. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} NextCorporate. All rights reserved.</p>
         </div>
       </div>
     </footer>

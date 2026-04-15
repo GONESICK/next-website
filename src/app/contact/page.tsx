@@ -89,7 +89,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 dark:text-white">Email</h3>
-                        <p className="text-gray-600 dark:text-gray-300">contact@corporateshowcase.com</p>
+                        <p className="text-gray-600 dark:text-gray-300">contact@nextcorporate.com</p>
                       </div>
                     </div>
                   </CardContent>
