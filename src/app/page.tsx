@@ -1,10 +1,15 @@
+'use client'
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, TrendingUp, Users, Target, Zap } from 'lucide-react';
 import Carousel from '@/components/Carousel';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function Home() {
+  const {t} = useLanguage()
+
   return (
     <div className="flex flex-col">
       {/* Carousel Hero Section */}
@@ -15,10 +20,10 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-              Why Choose Us
+              {t('home.featuresTitle')}
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-              We provide comprehensive solutions tailored to your business needs
+              {t('home.featuresSubtitle')}
             </p>
           </div>
           <div className="mx-auto mt-16 max-w-7xl">
@@ -26,23 +31,23 @@ export default function Home() {
               {[
                 {
                   icon: TrendingUp,
-                  title: 'Growth Focused',
-                  description: 'Strategies designed to accelerate your business growth',
+                  title: t('home.features.growthFocused.title'),
+                  description: t('home.features.growthFocused.description'),
                 },
                 {
                   icon: Users,
-                  title: 'Expert Team',
-                  description: 'Experienced professionals dedicated to your success',
+                  title: t('home.features.expertTeam.title'),
+                  description: t('home.features.expertTeam.description'),
                 },
                 {
                   icon: Target,
-                  title: 'Results Driven',
-                  description: 'Measurable outcomes that impact your bottom line',
+                  title: t('home.features.resultsDriven.title'),
+                  description: t('home.features.resultsDriven.description'),
                 },
                 {
                   icon: Zap,
-                  title: 'Innovation First',
-                  description: 'Cutting-edge solutions for modern challenges',
+                  title: t('home.features.innovationFirst.title'),
+                  description: t('home.features.innovationFirst.description'),
                 },
               ].map((feature) => (
                 <Card key={feature.title} className="text-center hover:shadow-lg transition-shadow">
@@ -67,26 +72,26 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-              Our Services
+              {t('services.title')}
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-              Comprehensive solutions for all your business needs
+              {t('home.servicesSubtitle')}
             </p>
           </div>
           <div className="mx-auto mt-16 max-w-7xl">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {[
                 {
-                  title: 'Business Consulting',
-                  description: 'Strategic guidance to optimize operations and drive growth',
+                  title: t('home.services.businessConsulting.title'),
+                  description: t('home.services.businessConsulting.description'),
                 },
                 {
-                  title: 'Technology Solutions',
-                  description: 'Modern tech stack implementation and digital transformation',
+                  title: t('home.services.technologySolutions.title'),
+                  description: t('home.services.technologySolutions.description'),
                 },
                 {
-                  title: 'Market Analysis',
-                  description: 'Data-driven insights for informed decision making',
+                  title: t('home.services.marketAnalysis.title'),
+                  description: t('home.services.marketAnalysis.description'),
                 },
               ].map((service) => (
                 <Card key={service.title} className="hover:shadow-lg transition-shadow">
@@ -103,7 +108,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Button asChild size="lg">
               <Link href="/services">
-                View All Services
+                {t('home.viewAllServices')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -115,15 +120,15 @@ export default function Home() {
       <section className="py-20 bg-primary text-primary-foreground">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Ready to Transform Your Business?
+            {t('home.ctaTitle')}
           </h2>
           <p className="mt-6 text-lg leading-8 text-primary-foreground/90">
-            Let&apos;s discuss how we can help you achieve your goals
+            {t('home.ctaSubtitle')}
           </p>
           <div className="mt-10">
             <Button asChild size="lg" variant="secondary">
               <Link href="/contact">
-                Contact Us Today
+                {t('home.contactUsToday')}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

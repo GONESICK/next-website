@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Calendar, Tag } from 'lucide-react';
+import Link from 'next/link';
 
 interface TrendCardProps {
   trend: {
@@ -24,7 +25,7 @@ const TrendCard = ({ trend }: TrendCardProps) => {
             alt={trend.title}
             width={400}
             height={192}
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+            className="h-auto w-full object-cover transition-transform duration-300 group-hover:scale-110"
           />
         </div>
       )}
@@ -33,7 +34,9 @@ const TrendCard = ({ trend }: TrendCardProps) => {
           <Tag className="h-4 w-4 text-primary" />
           <span className="text-sm text-primary font-medium">{trend.category}</span>
         </div>
-        <CardTitle>{trend.title}</CardTitle>
+        <CardTitle>
+        <Link href={`/industry-trends/${trend._id}`}>{trend.title}</Link>
+        </CardTitle>
         <CardDescription>{trend.description}</CardDescription>
       </CardHeader>
       <CardContent className="flex-1">

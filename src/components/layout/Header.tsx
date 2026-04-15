@@ -4,17 +4,20 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
-
-const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Services', href: '/services' },
-  { name: 'Industry Trends', href: '/industry-trends' },
-  { name: 'Contact', href: '/contact' },
-];
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navigation = [
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.services'), href: '/services' },
+    { name: t('nav.industryTrends'), href: '/industry-trends' },
+    { name: t('nav.contact'), href: '/contact' },
+  ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -45,9 +48,10 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center gap-4">
+          <LanguageSwitcher />
           <Button asChild>
-            <Link href="/contact">Get in Touch</Link>
+            <Link href="/contact">{t('nav.getInTouch')}</Link>
           </Button>
         </div>
       </nav>
@@ -83,10 +87,11 @@ export default function Header() {
                     </Link>
                   ))}
                 </div>
-                <div className="py-6">
+                <div className="py-6 space-y-4">
+                  <LanguageSwitcher />
                   <Button asChild className="w-full">
                     <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                      Get in Touch
+                      {t('nav.getInTouch')}
                     </Link>
                   </Button>
                 </div>
